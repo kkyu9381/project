@@ -113,7 +113,7 @@ def main():
             print(f"  - {p}")
         # 생성된 이미지 자동으로 열기
         for p in saved_files:
-            os.startfile(p)
+            os.startfile(os.path.abspath(p))
     else:
         print("이미지가 생성되지 않았습니다. 응답 내용 확인 필요.")
         print(f"응답 파트 수: {len(response.parts)}")
