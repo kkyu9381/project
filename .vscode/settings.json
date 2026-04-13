@@ -1,3 +1,25 @@
 {
-    "claudeCode.initialPermissionMode": "default"
+    "claudeCode.initialPermissionMode": "default",
+    "claudeCode.hooks": {
+        "onSkillInvoke": "python3 generate_image.py",
+        "onToolCall": {
+            "bash": {
+                "pattern": "generate_image\\.py",
+                "handler": "auto_run_image_generation"
+            }
+        }
+    },
+    "claudeCode.imageGeneration": {
+        "enabled": true,
+        "scriptPath": "./generate_image.py",
+        "outputDir": "./generated_images",
+        "models": {
+            "flash": "gemini-3.1-flash-image-preview",
+            "pro": "gemini-3.0-pro"
+        }
+    },
+    "claudeCode.environment": {
+        "envFile": ".emv",
+        "autoLoad": true
+    }
 }
